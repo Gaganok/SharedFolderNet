@@ -1,0 +1,27 @@
+#serverView .list-cell:filled{
+-fx-background-color: rgba(255, 107, 129, 0.3);
+-fx-text-fill: black;
+}
+
+#serverView .list-cell:filled:hover{
+-fx-background-color: rgba(255, 107, 129, 0.7);
+}
+
+#serverView .list-cell:focused{
+-fx-background-color: rgba(255, 107, 129, 1.0);
+}
+
+#clientView .list-cell:filled{
+-fx-background-color: rgba(123, 237, 159, 0.3);
+-fx-text-fill: black;
+}
+
+#clientView .list-cell:filled:hover{
+-fx-background-color: rgba(123, 237, 159, 0.7);
+}
+
+#clientView .list-cell:focused{
+-fx-background-color: rgba(123, 237, 159, 1);
+}
+
+
