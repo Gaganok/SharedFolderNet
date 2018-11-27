@@ -21,5 +21,4 @@ public class Monitor extends Thread{
 			} catch (InterruptedException e) {e.printStackTrace();}
 		}
 	}
-
 }

@@ -18,6 +18,12 @@
                <font>
                   <Font size="26.0" />
                </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Label>
          </children>
       </HBox>

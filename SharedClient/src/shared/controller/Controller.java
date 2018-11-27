@@ -22,9 +22,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.stage.FileChooser;
-import shared.client.Client;
+import shared.client.ClientRMI;
 import shared.core.PlayerMain;
 import shared.interfaces.Monitorable;
+import shared.model.Client;
 import shared.model.ClientMediaPlayer;
 import shared.model.Folder;
 import shared.service.Monitor;
@@ -119,7 +120,8 @@ public class Controller implements Initializable, Monitorable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			client = new Client();
+			//!!!!!!!!!!!!!!!!!!!!!!!! Change This To client RMI OR SOCKET implementation
+			client = new ClientRMI();
 		} catch (Throwable e) {e.printStackTrace();};
 		
 		initSharedList();
