@@ -26,6 +26,7 @@ public class ServerRMI {
 */
 	public static void main(String args[]) { 
 		try {
+			LocateRegistry.createRegistry(1099);
 			RemoteFolder folder = (RemoteFolder) UnicastRemoteObject.exportObject(SharedFolderRMI.getRemoteFolder(), 0);
 			LocateRegistry.getRegistry().bind("sharedFolder", folder);
 		} catch (AlreadyBoundException | RemoteException e) {e.printStackTrace();}

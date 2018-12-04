@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.rmi.NotBoundException;
@@ -20,17 +23,23 @@ import shared.model.FilePackage;
 import shared.model.RemoteFolder;
 
 public class ClientRMI extends Thread implements Client{
-/*	private final String ADDRESS = "localhost";
+	/*	private final String ADDRESS = "localhost";
 	private final int PORT = 7777;*/
 
 	private Socket socket;
-	private final RemoteFolder folder;
+	private RemoteFolder folder;
 
 	public ClientRMI() throws UnknownHostException, IOException, NotBoundException{
-		Registry registry = LocateRegistry.getRegistry(null);
-		folder = (RemoteFolder) registry.lookup("sharedFolder");
-		
-		System.out.println(folder.getFileNames().toString());
+		new Thread(() -> {
+			do {
+				try {
+					Registry registry = LocateRegistry.getRegistry(null);
+					folder = (RemoteFolder) registry.lookup("sharedFolder");
+					System.out.println(folder.getFileNames().toString());
+				}catch(Throwable e) {}
+			} while(folder == null);
+		}).start();
+
 	}
 
 	public List<String> getList() throws IOException, ClassNotFoundException{
@@ -60,7 +69,7 @@ public class ClientRMI extends Thread implements Client{
 			buffer.close();
 
 			folder.importFile(new FilePackage(fileBytes, file));
-			
+
 			System.out.println("File Imported");
 		} catch (IOException e) {e.printStackTrace();}
 	}

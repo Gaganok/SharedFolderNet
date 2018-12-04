@@ -6,14 +6,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-base: white;" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared.controller.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-base: white;" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared.controller.Controller">
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="stopButton" mnemonicParsing="false" onAction="#stop" prefHeight="50.0" prefWidth="80.0" style="-fx-base: #e74c3c;" text="Stop" />
-            <Button fx:id="playButton" mnemonicParsing="false" onAction="#play" prefHeight="50.0" prefWidth="80.0" style="-fx-base: #1abc9c;" text="Play" />
-            <Button fx:id="loadButton" mnemonicParsing="false" onAction="#download" prefHeight="50.0" prefWidth="80.0" style="-fx-base: #bdc3c7;" text="Download" />
-            <Button fx:id="importButton" mnemonicParsing="false" onAction="#importMedia" prefHeight="50.0" prefWidth="80.0" style="-fx-base: #bdc3c7;" text="Import" />
+            <Button fx:id="stopButton" mnemonicParsing="false" onAction="#stop" prefHeight="30.0" prefWidth="80.0" style="-fx-base: #e74c3c;" text="Stop" />
+            <Button fx:id="playButton" mnemonicParsing="false" onAction="#play" prefHeight="30.0" prefWidth="80.0" style="-fx-base: #1abc9c;" text="Play" />
+            <Button fx:id="loadButton" mnemonicParsing="false" onAction="#download" prefHeight="30.0" prefWidth="80.0" style="-fx-base: #bdc3c7;" text="Download" />
+            <Button fx:id="importButton" mnemonicParsing="false" onAction="#importMedia" prefHeight="30.0" prefWidth="80.0" style="-fx-base: #bdc3c7;" text="Import" />
             <Label fx:id="connectionLabel" text="Connection Status">
                <font>
                   <Font size="26.0" />
